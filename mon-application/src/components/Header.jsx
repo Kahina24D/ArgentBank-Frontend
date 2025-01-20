@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { authReducer } from "../redux/reducer/auth.reducer"
-import logo from "../assets/logo.png"; // Chemin du logo, ajustez selon votre projet
+
+
 import { useSelector, useDispatch } from "react-redux"; // Accéder au store
 import { logout } from "../redux/action/auth.actions";
 const Header = () => {
@@ -12,7 +12,7 @@ const Header = () => {
     <header>
       <nav className="main-nav">
         <Link to="/" className="main-nav-logo">
-          <img src={logo} alt="Argent Bank Logo" />
+         
           <h1 className="main-nav-title">Argent Bank</h1>
         </Link>
         <div>

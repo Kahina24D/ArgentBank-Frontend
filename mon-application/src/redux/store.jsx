@@ -1,7 +1,11 @@
-import { createStore } from "redux";
-import {authReducer} from "./reducer/auth.reducer"
+import { configureStore } from "@reduxjs/toolkit";
+import authReducer from "./reducer/auth.reducer";
+import profileReducer from "./reducer/user.reducer"
+const store = configureStore({
+    reducer: {
+        auth: authReducer, // Ajout du reducer
+        profile: profileReducer, // Ajouter le profil dans l'état global
+    },
+});
 
-//creer  le store.jsx
-
-const store=createStore(authReducer);
 export default store;
