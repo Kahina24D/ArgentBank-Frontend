@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchProfile, updateProfile } from "../redux/action/profile.actions";
+import { fetchProfile, updateProfile } from '../redux/action/profile.actions';
 import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const dispatch = useDispatch();
-  const { user, loading, error } = useSelector((state) => state.Profile || {});
-  const [userName, setUserName] = useState("");
+  const { user, loading, error } = useSelector((state) => state.profile);
+  const [userName, setUserName] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("authToken");
-
-    // Vérifier si l'utilisateur est connecté, sinon rediriger
+    const token = localStorage.getItem('authToken');
     if (!token) {
-      navigate("/login");
+      navigate('/profile');
     } else {
       dispatch(fetchProfile());
     }
@@ -32,6 +30,8 @@ const Profile = () => {
       <h1>Profil utilisateur</h1>
       {user && (
         <div>
+          <p>{user.firstName}</p>
+          <p>{user.userName}</p>
           <p><strong>ID :</strong> {user.id}</p>
           <p><strong>Email :</strong> {user.email}</p>
         </div>

@@ -5,7 +5,6 @@ import Header from './components/Header';
 import { Home } from './Pages/Home';
 import Login from './Pages/LogIn';
 import Profile from './Pages/Profile';
-
 function App() {
     // const isConnected = useSelector((state) => state.auth.isConnected);
 
@@ -16,7 +15,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/login' element={<Login />} />
-                    <Route path='/profile' element={<Profile />} />
+                    <Route path='/Profile' element={<Profile />} />
                 </Routes>
             </div>
         </Router>
