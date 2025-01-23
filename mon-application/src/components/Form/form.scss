@@ -1,0 +1,19 @@
+form{
+    .form-connect{
+        margin: 0; /* Supprime les marges par défaut */
+      padding: 0; /* Supprime les espacements par défaut */
+      width: 100%;
+      height: 100vh; /* Prend 100% de la hauteur de la fenêtre */
+      background-color: #12002b;
+      
+     padding: 3rem;
+    display: flex;
+    justify-content: center;
+    .form-connect-Username,.form-connect-passeword{
+        display: flex;
+        flex-direction:column ;
+    }
+    }
+}
+
+

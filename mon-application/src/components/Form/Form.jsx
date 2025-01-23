@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { login } from "../redux/action/auth.actions";
-
+import { login } from "../../redux/action/auth.actions"
+import "./form.css"
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,8 +23,10 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label>Email:</label>
+      <div className="form-connect">
+        <div className="form-connect-connect">
+      <div  className="form-connect-Username">
+        <label>Username</label>
         <input
           type="email"
           value={email}
@@ -32,8 +34,8 @@ const Form = () => {
           required
         />
       </div>
-      <div>
-        <label>Password:</label>
+      <div className="form-connect-passeword">
+        <label>Password</label>
         <input
           type="password"
           value={password}
@@ -41,8 +43,11 @@ const Form = () => {
           required
         />
       </div>
+      
       {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       <button type="submit">Sign In</button>
+      </div>
+      </div>
     </form>
   );
 };

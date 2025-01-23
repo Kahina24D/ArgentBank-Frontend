@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Ut
 
 import Header from './components/Header/Header';
 import { Home } from './Pages/Home/Home';
-import Login from './Pages/LogIn';
+import Login from './Pages/login/LogIn';
 import Profile from './Pages/Profile';
 function App() {
     // const isConnected = useSelector((state) => state.auth.isConnected);
