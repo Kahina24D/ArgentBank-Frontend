@@ -1,0 +1,31 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+
+  .main-nav-logo {
+    img {
+      max-width: 100%; // Correction du commentaire
+      width: 220px;    // Largeur fixe
+    }
+  }
+
+  .not-connected {
+    .not-connected-link {
+      display: flex; // Active Flexbox pour aligner horizontalement les éléments
+      align-items: center; // Centre verticalement l'icône et le texte
+      gap: 8px; // Ajoute un espace de 8px entre l'icône et le texte
+      color: rgb(17, 16, 16);
+      text-decoration: none; // Supprime le soulignement
+  
+      padding: 10px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+    
+    }
+  
+    i {
+      font-size: 1.5rem; // Ajuste la taille de l'icône (optionnel)
+    }
+  }
+  
+}

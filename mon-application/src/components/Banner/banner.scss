@@ -1,0 +1,38 @@
+.banner {
+    position: relative;
+  
+    img {
+      background-position: 0 -50px;
+      object-fit: cover;
+      background-repeat: no-repeat;
+      height: 400px;
+      width: 100%;
+    }
+  
+    .banner-text {
+      position: absolute; /* Positionnement absolu pour placer le texte sur l'image */
+      top: 50%; /* Place au milieu verticalement */
+      right: 2rem; /* Décale à droite */
+      transform: translateY(-50%); /* Ajuste pour centrer précisément verticalement */
+      background:white; /* Légèrement transparent */
+      padding: 2rem;
+      text-align: left;
+   
+      width: 250px; /* Ajustez la largeur selon vos besoins */
+      border-radius: 8px; /* Optionnel, pour un design plus moderne */
+      .introduction{
+        
+        .subtitle{
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 0;
+        }
+        .text{
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+      }
+    }
+
+  }
+  

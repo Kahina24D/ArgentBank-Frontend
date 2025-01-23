@@ -1,0 +1,25 @@
+.feature-item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  width: 33%;
+}
+.feature-item-icon {
+  border: 10px solid #00bc77;
+  border-radius: 50%;
+  padding: 1rem;
+  width: 9.375rem;
+}
+.feature-item-title {
+  color: #222;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.feature-item-description {
+  color: rgb(17, 16, 16);
+  text-align: center;
+}/*# sourceMappingURL=feature.css.map */

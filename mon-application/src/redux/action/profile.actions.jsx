@@ -31,7 +31,7 @@ export const fetchProfile = () => async (dispatch) => {
 };
 
 // Action pour mettre à jour le profil utilisateur
-export const updateProfile = (userName) => async (dispatch) => {
+export const updateProfile = (userName,lastName) => async (dispatch) => {
   dispatch({ type: "UPDATE_PROFILE_REQUEST" });
 
   try {

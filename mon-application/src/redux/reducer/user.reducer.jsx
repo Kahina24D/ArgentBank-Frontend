@@ -8,7 +8,9 @@ const initialProfileState = {
 export default function profileReducer(state = initialProfileState, action) {
   switch (action.type) {
     case "FETCH_PROFILE_REQUEST":
-      return { ...state, loading: true, error: null };
+      return {   ...state,
+        userData: action.payload,
+        loading: false, };
     case "FETCH_PROFILE_SUCCESS":
       return { ...state, user: action.payload, loading: false };
     case "FETCH_PROFILE_FAIL":

@@ -1,0 +1,21 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.main-nav .main-nav-logo img {
+  max-width: 100%;
+  width: 220px;
+}
+.main-nav .not-connected .not-connected-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgb(17, 16, 16);
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.main-nav .not-connected i {
+  font-size: 1.5rem;
+}/*# sourceMappingURL=header.css.map */
