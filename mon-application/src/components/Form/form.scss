@@ -1,19 +1,100 @@
-form{
-    .form-connect{
-        margin: 0; /* Supprime les marges par défaut */
-      padding: 0; /* Supprime les espacements par défaut */
+form {
+    .form-connect {
+      margin: 0;
+  
       width: 100%;
-      height: 100vh; /* Prend 100% de la hauteur de la fenêtre */
+      height: 100vh;
       background-color: #12002b;
-      
-     padding: 3rem;
-    display: flex;
-    justify-content: center;
-    .form-connect-Username,.form-connect-passeword{
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+   padding: 2rem;
+  
+      .form-connect-connect {
+        background-color: white;
+        padding: 1.5rem;
+   
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         display: flex;
-        flex-direction:column ;
-    }
-    }
-}
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+        gap:1rem;
+      }
+  
+      .form-connect-Username,
+      .form-connect-passeword {
+        display: flex;
+        flex-direction: column;
+        color: #12002b;
+        text-align: left;
+        width: 100%;
+      
+      }
+  
+      label {
+        font-size: 14px;
+        font-weight: bold;
+      
+      }
+  
+      input {
+     
+        display: block;
+    width: 100%;
+       margin: auto;
+    font-size: 1rem;
+    font-weight: bold;
+height: 2rem;
 
-
+    color:black;
+      }
+  
+      input:focus {
+        border-color: #12002b; /* Couleur de la bordure lors du focus */
+        box-shadow: 0 0 4px rgba(18, 0, 43, 0.5); /* Effet lumineux */
+      }
+  
+      .btn-submit {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        width: 100%;
+      }
+  
+      button {
+      
+        display: block;
+        width: 100%;
+        padding: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-top: 1rem;
+        border-color: #00bc77;
+        background-color: #00bc77;
+        color: #fff;
+      }
+  
+      .input-remember {
+        display: flex;
+        align-items: center;
+        align-self: flex-start;
+        
+        margin-top: 1rem; /* Ajoute un espace au-dessus */
+        color: #12002b; /* Assure que le texte est visible sur un fond clair */
+      }
+      
+      .input-remember input {
+        margin-right: 0.9rem; /* Crée un espace entre la case à cocher et le label */
+        transform: scale(1.2); /* Agrandit la case pour une meilleure accessibilité */
+      }
+      
+      .input-remember label {
+        font-size: 14px; /* Taille de texte pour le label */
+        width: 100%
+      }
+      
+    }
+  }
+  

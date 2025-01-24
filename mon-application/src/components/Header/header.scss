@@ -9,6 +9,18 @@
     }
   }
 
+  .main-nav__connect {
+    display: flex; // Ajout de flexbox pour aligner les éléments horizontalement
+    align-items: center; // Centre verticalement les éléments
+
+    .connected {
+      display: flex;
+      align-items: center; // Centre les éléments verticalement
+      justify-content: space-between; // Espace les éléments horizontalement
+      gap: 15px; // Espace entre les éléments à l'intérieur de la section connectée
+    }
+  }
+
   .not-connected {
     .not-connected-link {
       display: flex; // Active Flexbox pour aligner horizontalement les éléments
@@ -16,16 +28,13 @@
       gap: 8px; // Ajoute un espace de 8px entre l'icône et le texte
       color: rgb(17, 16, 16);
       text-decoration: none; // Supprime le soulignement
-  
       padding: 10px 12px;
       border-radius: 5px;
       font-weight: bold;
-    
     }
-  
+
     i {
       font-size: 1.5rem; // Ajuste la taille de l'icône (optionnel)
     }
   }
-  
 }

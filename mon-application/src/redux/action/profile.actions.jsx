@@ -2,7 +2,7 @@
 
 // Action pour récupérer le profil utilisateur
 export const fetchProfile = () => async (dispatch) => {
-  dispatch({ type: "FETCH_PROFILE_REQUEST" });
+  dispatch({ type: "FETCH_PROFILE_REQUEST" }); // Déclenche l'action de récupération du profil
 
   try {
     const token = localStorage.getItem("authToken");
@@ -21,7 +21,7 @@ export const fetchProfile = () => async (dispatch) => {
     const data = await response.json();
 
     if (response.ok) {
-      dispatch({ type: "FETCH_PROFILE_SUCCESS", payload: data.body });
+      dispatch({ type: "FETCH_PROFILE_SUCCESS", payload: data.body }); // Enregistre les données utilisateur dans le store
     } else {
       dispatch({ type: "FETCH_PROFILE_FAIL", payload: data.message || "Failed to fetch profile" });
     }
@@ -30,8 +30,9 @@ export const fetchProfile = () => async (dispatch) => {
   }
 };
 
+
 // Action pour mettre à jour le profil utilisateur
-export const updateProfile = (userName,lastName) => async (dispatch) => {
+export const updateProfile = (userName) => async (dispatch) => {
   dispatch({ type: "UPDATE_PROFILE_REQUEST" });
 
   try {

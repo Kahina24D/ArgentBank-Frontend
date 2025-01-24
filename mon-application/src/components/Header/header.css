@@ -6,6 +6,16 @@
   max-width: 100%;
   width: 220px;
 }
+.main-nav .main-nav__connect {
+  display: flex;
+  align-items: center;
+}
+.main-nav .main-nav__connect .connected {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
 .main-nav .not-connected .not-connected-link {
   display: flex;
   align-items: center;
