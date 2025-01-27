@@ -2,16 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProfile } from '../../redux/action/profile.actions';
 import { useNavigate } from 'react-router-dom';
-import EditModal from '../../components/EditModal/EditModal';
+import EditProfile from '../../components/EiditProfile/EditProfile';
+import { AccountCardData } from '../../data/AccountCardData';
+import Account from '../../components/Account/Account';
+import './profile.scss';
 
 const Profile = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [displayForm, setDisplayForm] = useState(false);
 
-  // État pour gérer l'ouverture de la modal
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Sélectionner les informations du profil depuis le store
   const { user, loading, error } = useSelector((state) => state.profile || {});
 
   useEffect(() => {
@@ -23,32 +23,35 @@ const Profile = () => {
     }
   }, [dispatch, navigate]);
 
-  // Vérification si les données sont en cours de chargement ou si une erreur se produit
   if (loading) return <p>Chargement...</p>;
   if (error) return <p>Erreur : {error}</p>;
 
-  // Fonction pour ouvrir et fermer la modal
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
-
   return (
-    <div>
+    <div className='container-profile'>
+      {displayForm && <EditProfile onClose={() => setDisplayForm(false)} />}
+
       {user ? (
         <div className="user-profile">
-          <h1>Welcome back, {user.firstName}!</h1>
-          <button className="edit-button" onClick={openModal}>
+          <button className="edit-button" onClick={() => setDisplayForm(true)}>
             Edit Profile
           </button>
-          {/* La modal ne s'affiche que si `isModalOpen` est vrai */}
-          {isModalOpen && (
-            <EditModal isOpen={isModalOpen} onRequestClose={closeModal} />
-          )}
         </div>
       ) : (
         <p>Utilisateur non trouvé</p>
       )}
+
+      {AccountCardData.map((data) => (
+        <Account
+          key={data.id}
+          title={data.title}
+          amount={data.amount}
+          description={data.description}
+        />
+      ))}
     </div>
   );
 };
 
 export default Profile;
+
+

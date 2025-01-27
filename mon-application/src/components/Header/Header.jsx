@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/action/auth.actions";
 import "./header.scss";
 import logo from "../../img/logo.png";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,8 @@ const Header = () => {
 
   const isConnected = useSelector((state) => state.auth.isConnected);
   const userName = useSelector((state) => state.profile.user?.userName); // Accède au nom d'utilisateur du profil
-
+const location=useLocation();
+const isprofilePage=location.pathname==="/profile"
   const handleLogout = () => {
     dispatch(logout());
     localStorage.removeItem("authToken");
@@ -20,35 +22,45 @@ const Header = () => {
 
   return (
     <header>
-      <nav className="main-nav">
-        <Link to="/" className="main-nav-logo">
+      <nav  className={`main-nav ${isprofilePage ?"profile-header" :""} `}>
+        <div to="/" className="main-nav-logo">
           <img
             className="main-nav-logo-image"
             src={logo}
             alt="Argent Bank Logo"
           />
-        </Link>
-        <div className="main-nav__connect">
-          {isConnected ? (
-            <div className="connected">
-              <Link to="/profile">
-                <p>{userName}</p> 
-                <i className="fa fa-user-circle"></i>
-              </Link>
-              <button className="logout-button" onClick={handleLogout}>
-                <i className="fa fa-sign-out"></i>
-              </button>
-              <span>Sign out</span>
-            </div>
-          ) : (
-            <div className="not-connected">
-              <Link to="/login" className="not-connected-link">
-                <i className="fa fa-user-circle"></i>
-                <span>Sign in</span>
-              </Link>
-            </div>
-          )}
         </div>
+        <div className="main-nav__connect">
+  {isConnected ? (
+    <div className="connected">
+      <div className="left-section">
+      <div className="username-section">
+        <p>{userName}</p>
+        <Link to="/profile" className="profile-link">
+        
+          <i className="fa fa-user-circle"></i>
+        </Link>
+      </div>
+        
+        <Link to="/settings" className="settings-link">
+          <i className="fa fa-gear"></i>
+        </Link>
+        <button className="logout-button" onClick={handleLogout}>
+          <i className="fa fa-power-off"></i>
+        </button>
+      </div>
+      
+    </div>
+  ) : (
+    <div className="not-connected">
+      <Link to="/login" className="not-connected-link">
+        <i className="fa fa-user-circle"></i>
+        <span className="sign-in">Sign in</span>
+      </Link>
+    </div>
+  )}
+</div>
+
       </nav>
     </header>
   );

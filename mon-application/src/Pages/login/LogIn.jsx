@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from '../../components/Form/Form.jsx';
 
+import "./login.scss"
 /* Login page */
 function Login () {
     return (

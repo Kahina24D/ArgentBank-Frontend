@@ -1,0 +1,29 @@
+.form-connect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    h2{
+     text-align: justify;
+    }
+    .form-connect-input{
+      
+        input{
+           
+            width: 100px;
+        }
+    }
+   .form-connect-bt{
+    display: flex;
+    gap: 1rem;
+    .submit-button,.cancel-button{
+        background-color: #00bc77;
+        border:none;
+        padding: 0.5rem;
+        width: 80px;
+        color: white;
+    }
+   }
+    
+}

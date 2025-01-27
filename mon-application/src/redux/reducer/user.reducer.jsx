@@ -19,7 +19,11 @@ export default function profileReducer(state = initialProfileState, action) {
       return { ...state, loading: true }; // Met l'état en "chargement" lors de la mise à jour
 
     case "UPDATE_PROFILE_SUCCESS":
-      return { ...state, loading: false }; // Après la mise à jour, on arrête le chargement
+      return {
+        ...state,
+        user: { ...state.user, ...action.payload }, // Met à jour les données utilisateur
+        loading: false,
+      };
 
     case "UPDATE_PROFILE_FAIL":
       return { ...state, loading: false, error: action.payload }; // En cas d'erreur lors de la mise à jour

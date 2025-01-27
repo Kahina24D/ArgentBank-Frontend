@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../redux/action/auth.actions"
 import "./form.css"
+
 const Form = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +27,13 @@ const Form = () => {
     <form onSubmit={handleSubmit}>
       <div className="form-connect">
         <div className="form-connect-connect">
-      <div  className="form-connect-Username">
+       
+        
+        <i className="fa fa-user-circle"></i>
+  
+          <p className="signIn">Sign In</p>
+        <div  className="form-connect-Username">
+
         <label>Username</label>
         <input
           type="email"
@@ -34,8 +41,8 @@ const Form = () => {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-      </div>
-      <div className="form-connect-passeword">
+       </div>
+       <div className="form-connect-passeword">
         <label>Password</label>
         <input
           type="password"
@@ -43,17 +50,17 @@ const Form = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-      </div>
-      <div className='input-remember'>
+       </div>
+        <div className='input-remember'>
                     <input 
                         id='remember-me' 
                         type='checkbox' 
                         checked={rememberMe}
                         onChange={(event) => setRememberMe(event.target.checked)}
                     />
-                    <label htmlFor='remember-me'>Remember me</label>
+                    <p className="helo" >Remember me</p>
                 </div>
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+         {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       <div className="btn-submit">
       <button  type="submit">Sign In</button>
       </div>
