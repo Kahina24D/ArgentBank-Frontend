@@ -1,20 +1,24 @@
-import React from 'react'
+import React from 'react';
 import './account.scss';
 
-/* Component function that returns a user's account */
-function Account ({ title, amount, description }) {
-    return (
-        <section className='account'>
-            <h2 className='sr-only'>Accounts</h2>
-            <div className='account-content-wrapper'>
-                <h3 className='account-title'>{title}</h3>
-                <p className='account-amount'>{amount}</p>
-                <p className='account-amount-description'>{description}</p>
-            </div>
-           
+const Account = ({ title, amount, description, onViewTransactions }) => {
+  return (
+    <section className="account">
+      <div className="account-content">
+        <h3 className="account-title">{title}</h3>
+        <p className="account-amount">${amount}</p>
+        <p className="account-description">{description}</p>
+      </div>
+      <div className="account-actions">
+        <button className="view-transactions-button" onClick={() => {
+        
+          onViewTransactions();
+        }}>
+          View transactions
+        </button>
+      </div>
+    </section>
+  );
+};
 
-        </section> 
-    )
-}
-
-export default Account
+export default Account;

@@ -1,8 +1,52 @@
+
+
+
+
 .container-profile{
+    background-color:#12002b;
+ padding-bottom: 0.5rem;
+    .user-profile{background-color: #12002b;
+    display: flex;
+  flex-direction: column;
+  text-align: center;
+  p{color: #fff;
+  text-align: center;
+  font-size: 2rem;
   
-    max-width: none;
-    flex: 1 1 0%;
-    display: flex
-;
-    flex-direction: column;
+  }
+  .edit-button{
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    width: 90px;
+   margin: auto;
+  }
 }
+
+}
+
+
+.account-transaction-container {
+    width: 90%; /* Ajuste selon ton design */
+
+display: block;
+margin: auto;
+  padding: 1rem;
+
+  }
+  
+  /* On applique la même largeur aux transactions */
+  .transactions-section {
+    width: 100%; /* Prend toute la largeur du compte */
+
+ 
+ 
+  }
+  
+  .transactions-section .element {
+    display: flex;
+  
+  }
+  

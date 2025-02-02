@@ -4,24 +4,32 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    color:#fff;
     h2{
      text-align: justify;
+
+  
     }
     .form-connect-input{
-      
+      display: flex;
+margin: 2rem;
+margin: 0;
+gap: 0.5rem;
         input{
            
-            width: 100px;
+            width: 120px;
+            height: 20px;
         }
     }
    .form-connect-bt{
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
+    padding: 1rem;
     .submit-button,.cancel-button{
         background-color: #00bc77;
         border:none;
         padding: 0.5rem;
-        width: 80px;
+        width: 100px;
         color: white;
     }
    }

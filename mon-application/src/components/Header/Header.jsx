@@ -35,19 +35,20 @@ const isprofilePage=location.pathname==="/profile"
     <div className="connected">
       <div className="left-section">
       <div className="username-section">
-        <p>{userName}</p>
+        
         <Link to="/profile" className="profile-link">
         
           <i className="fa fa-user-circle"></i>
         </Link>
+        <p>{userName}</p>
+        <button className="logout-button" onClick={handleLogout}>
+        <i class="fa-solid fa-right-from-bracket"> </i>
+      <p>   Sign Out</p>
+        </button>
       </div>
         
-        <Link to="/settings" className="settings-link">
-          <i className="fa fa-gear"></i>
-        </Link>
-        <button className="logout-button" onClick={handleLogout}>
-          <i className="fa fa-power-off"></i>
-        </button>
+        
+      
       </div>
       
     </div>

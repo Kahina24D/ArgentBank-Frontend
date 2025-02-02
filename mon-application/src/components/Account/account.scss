@@ -1,33 +1,79 @@
-.account { align-items: center;
-    background-color: rgb(129, 128, 128); 
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem auto;
-    padding: 1.5rem;
-    text-align: left;
-    width: 82%;
-    @media (max-width: 720px) {flex-direction: column;}
-    .account-content-wrapper { width: 100%;
-                               .account-title { font-size: 1rem;
-                                                font-weight: normal; 
-                                              }
-                               .account-amount { font-size: 2.5rem;
-                                                 font-weight: bold;
-                                               }
-                             }
-    .cta { 
-           @media (max-width: 720px) {width: 100%;}
-           .transaction-button { background-color: #00bc77;
-                                 border-color: #00bc77;
-                                 color: #fff;
-                                 display: block;
-                                 font-size: 1.1rem;
-                                 font-weight: bold;
-                                 margin-top: 1rem;
-                                 padding: 0.5rem;
-                                 width: 15rem;
-                                 @media (max-width: 720px) {width : 100%;}
-                               }   
-         } 
-  }
+.account {    
+  display: flex;
+
+      justify-content: space-between;
+
+      border: 1px solid black;
+      background-color: #fff;
+      width: 80%;
+   
+      margin: 0 auto;
+
+   margin-top: 2rem;
+margin-bottom: 2rem;
+      
+      box-sizing: border-box;
+      text-align: left;
+      margin-bottom: 2rem;
+
+      .account-content{
+        padding-left: 2rem;
+        margin: 0;
+        text-align: justify;
+        line-height: 1.3rem;
+      .account-title,.account-description{
+     
+        font-size: 1rem;
+        font-weight: normal;
+        color: #2c3e50;
+      }
+      .account-amount{
+        margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding: 0;
+    color: #2c3e50;
+      }
+      }
+      .account-actions{
+        display: flex;
+        align-items: center;
+  padding-right: 2rem;
+.view-transactions-button{
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+}
+      }
+    }
+ 
+    // @media (max-width: 720px) {flex-direction: column;}
+    // .account-content-wrapper { width: 100%;
+    //                            .account-title { font-size: 1rem;
+    //                                             font-weight: normal; 
+    //                                           }
+    //                            .account-amount { font-size: 2.5rem;
+    //                                              font-weight: bold;
+    //                                            }
+    //                          }
+    // .cta { 
+    //        @media (max-width: 720px) {width: 100%;}
+    //        .transaction-button { background-color: #00bc77;
+    //                              border-color: #00bc77;
+    //                              color: #fff;
+    //                              display: block;
+    //                              font-size: 1.1rem;
+    //                              font-weight: bold;
+    //                              margin-top: 1rem;
+    //                              padding: 0.5rem;
+    //                              width: 15rem;
+    //                              @media (max-width: 720px) {width : 100%;}
+    //                            }   
+    //      } 
+  

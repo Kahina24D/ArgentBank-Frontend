@@ -32,7 +32,7 @@ const EditProfile = ({ onClose }) => {
   return (
     <div>
       <form onSubmit={handleSubmit} className="form-connect">
-        <h2>Edit user info</h2>
+        <div><h2>Edit user info</h2></div>
         <div className="form-connect-input">
           <label>Username: </label>
           <input
@@ -40,7 +40,7 @@ const EditProfile = ({ onClose }) => {
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
             required
-            placeholder="Enter your username"
+            placeholder={user.userName}
           />
         </div>
         <div className="form-connect-input">

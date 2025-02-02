@@ -1,4 +1,6 @@
 .main-nav{
+
+  color: #2c3e50;
   &:hover{
     text-decoration: none;
   }
@@ -12,35 +14,40 @@
   .connected {
     display: flex; /* Aligne les éléments horizontalement */
     align-items: center; /* Aligne les éléments verticalement au centre */
-    gap: 10px; /* Espacement entre les éléments */
-    color: #00bc77; 
-    font-size: 1.5rem;
-
    
     .left-section {
       display: flex;
       align-items: center; /* Centre verticalement les enfants */
-      gap: 2rem; /* Espacement entre les icônes et le nom d'utilisateur */
+      color: #2c3e50;
     }
   
     .username-section {
       display: flex;
       align-items: center; /* Centre verticalement le texte */
       gap: 0.5rem;
-      font-weight: bold; /* Rend le texte plus visible */
+    /* Rend le texte plus visible */
+    font-weight: bold;
+
+    p{
+      color: #2c3e50;
+    }
+   
     }
   
-    .profile-link,
-    .settings-link {
+    .profile-link
+   {
       display: flex;
       align-items: center; /* Centre les icônes verticalement */
-    /* Taille de l'icône */
-      color: #00bc77;; /* Couleur de l'icône */
+
       text-decoration: none; /* Supprime le soulignement des liens */
       transition: color 0.3s;
       background-color: white;
-     
-  
+      font-size: 1.5rem;
+      color: #2c3e50;
+     .fa-user-circle{
+    color: #2c3e50;
+    font-size: 1rem;
+    }
     }
   
     .logout-button {
@@ -48,22 +55,20 @@
       align-items: center; /* Centre l'icône verticalement */
       background: none; /* Supprime le fond par défaut */
       border: none; /* Supprime les bordures */
-    /* Taille de l'icône */
-      color: #37ad6c;
-      font-size: 1.5rem;
+      font-size: 1rem;
+     gap: 0.5rem;
+      font-weight: bold;
       cursor: pointer;
       transition: color 0.3s;
-  
-   
+         color: #2c3e50;
     }
   }
   .not-connected-link{
     display: flex;
     align-items: center;
-    
     gap: 1rem;
-  color: black;
-  text-decoration: none;
+    color: #2c3e50;
+    text-decoration: none;
 
   .sign-in{
     &:hover {
@@ -77,6 +82,7 @@
     .settings-link,
     .not-connected-link {
       text-decoration: none; /* Supprime le soulignement */
+      color: #2c3e50;
     }
 
     .profile-link:hover,
