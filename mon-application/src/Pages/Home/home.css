@@ -1,3 +1,1 @@
-.homepage .features {
-  display: flex;
-}/*# sourceMappingURL=home.css.map */
+.homepage .features{display:flex}@media screen and (max-width: 768px){.homepage .features{display:flex;flex-direction:column}}

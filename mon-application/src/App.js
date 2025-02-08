@@ -5,7 +5,7 @@ import Header from './components/Header/Header';
 import { Home } from './Pages/Home/Home';
 import Login from './Pages/login/LogIn';
 import Profile from './Pages/Profile/Profile';
-
+import './App.css'
 function App() {
     // const isConnected = useSelector((state) => state.auth.isConnected);
 

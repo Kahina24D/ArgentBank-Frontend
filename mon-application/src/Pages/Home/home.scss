@@ -4,3 +4,12 @@
       
     }
 }
+@media screen and (max-width: 768px){
+    .homepage{
+        .features{
+            display: flex;
+            flex-direction: column;
+          
+        }
+    }
+}

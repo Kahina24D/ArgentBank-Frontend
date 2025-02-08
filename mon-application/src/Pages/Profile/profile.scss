@@ -5,7 +5,8 @@
 .container-profile{
     background-color:#12002b;
  padding-bottom: 0.5rem;
-    .user-profile{background-color: #12002b;
+    .user-profile{
+    background-color: #12002b;
     display: flex;
   flex-direction: column;
   text-align: center;
@@ -49,4 +50,14 @@ margin: auto;
     display: flex;
   
   }
+  @media screen and (max-width: 768px) {
+
+    .account-transaction-container {
+    width: auto; /* Ajuste selon ton design */
   
+  display: block;
+  margin: auto;
+    padding: 1rem;
+  
+    }
+  }
