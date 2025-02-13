@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../redux/action/auth.actions";
@@ -12,20 +12,14 @@ const Header = () => {
   const location = useLocation();
 
   const isConnected = useSelector((state) => state.auth.isConnected);
-  const userNameFromState = useSelector((state) => state.profile.user?.userName);
-  
-  const [userName, setUserName] = useState(userNameFromState || "Utilisateur");
-
-  useEffect(() => {
-    // Lors du premier chargement, vérifier si l'utilisateur est connecté dans le localStorage
-    const storedUserName = localStorage.getItem("UserName");
-    if (storedUserName) {
-      setUserName(storedUserName);
-    }
-  }, [isConnected, userNameFromState]);
+  const userName = useSelector((state) => state.profile.user?.userName || "Utilisateur");
 
   const handleLogout = () => {
     dispatch(logout());
+    navigate('/');
+  };
+
+  const goToHome = () => {
     navigate('/');
   };
 
@@ -33,7 +27,7 @@ const Header = () => {
     <header>
       <nav className={`main-nav ${location.pathname === "/profile" ? "profile-header" : ""}`}>
         <div className="main-nav-logo">
-          <img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo" />
+          <img className="main-nav-logo-image" src={logo} alt="Argent Bank Logo" onClick={goToHome} />
         </div>
         <div className="main-nav__connect">
           {isConnected ? (

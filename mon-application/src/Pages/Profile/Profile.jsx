@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchProfile } from '../../redux/action/profile.actions';
+import { updateUserName } from '../../redux/action/auth.actions';
 import { useNavigate } from 'react-router-dom';
 import EditProfile from '../../components/EiditProfile/EditProfile';
 import { AccountCardData } from '../../data/AccountCardData';
@@ -12,7 +13,7 @@ const Profile = () => {
   const navigate = useNavigate();
   const [displayForm, setDisplayForm] = useState(false);
   const [displayButton, setDisplayButton] = useState(true);
-  const [selectedAccountId, setSelectedAccountId] = useState(null);
+
 
   const { user, loading, error } = useSelector((state) => state.profile || {});
 
@@ -37,18 +38,16 @@ const Profile = () => {
   if (error) return <p>Erreur : {error}</p>;
   if (!user) return <p>Utilisateur non trouvé</p>;
 
-  console.log("User data:", user);
-  console.log("User lastName:", user?.lastName);
-
- 
-
-
+  const handleUserNameChange = (newUserName) => {
+    dispatch(updateUserName(newUserName));
+  };
 
   return (
     <div className='container-profile'>
       {displayForm && (
         <EditProfile
           onClose={() => setDisplayForm(false)}
+          onUserNameChange={handleUserNameChange} // Ajout de la mise à jour du userName
         />
       )}
 
@@ -56,28 +55,13 @@ const Profile = () => {
         {displayButton && (
           <>
             <p>Welcome back<br />{user.firstName} {user.lastName}!</p>
-            <button
-              className="edit-button"
-              onClick={() => setDisplayForm(true)}
-            >
-              Edit Name
-            </button>
+            <button className="edit-button" onClick={() => setDisplayForm(true)}>Edit Name</button>
           </>
         )}
       </div>
 
       {AccountCardData.map((data) => (
-        <Account className="account"
-          key={data.id}
-          title={data.title}
-          amount={data.amount}
-          description={data.description}
-          onViewTransactions={() => {
-            setSelectedAccountId(
-              selectedAccountId === data.id ? null : data.id
-            );
-          }}
-        />
+        <Account key={data.id} {...data} />
       ))}
     </div>
   );
