@@ -9,6 +9,7 @@ return (
           className="banner-image"
           src={banktree}
           alt="Argent Bank banner"
+          
         />
         <div className="banner-text">
           <section className='introduction'>

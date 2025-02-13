@@ -19,7 +19,7 @@ export const login = (email, password) => async (dispatch) => {
       const token = data.body.token;
       localStorage.setItem("authToken", token);
       console.log("Token saved:", token);
-      dispatch({ type: "LOGIN_SUCCESS", payload: token });
+      dispatch({ type: "LOGIN_SUCCESS", payload: token, userName: data.body.userName });
     } else {
       const errorMessage = data.message || "Login failed";
       console.error("Login failed:", errorMessage);
@@ -60,5 +60,15 @@ export const signUp = (firstName, lastName, userName, email, password) => async 
   } catch (error) {
     console.error("Erreur pendant le chargement des données :", error);
     dispatch({ type: "SIGNUP_FAIL", payload: error.message }); // En cas d'erreur
+  }
+};
+export const loadAuthState = () => (dispatch) => {
+  const storedState = JSON.parse(localStorage.getItem("UserName"));
+
+  if (storedState && storedState.isConnected) {
+    dispatch({
+      type: "LOAD_AUTH_STATE",
+      payload: storedState,
+    });
   }
 };

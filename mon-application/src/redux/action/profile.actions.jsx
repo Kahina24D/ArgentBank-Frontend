@@ -6,6 +6,7 @@ export const fetchProfile = () => async (dispatch) => {
 
   try {
     const token = localStorage.getItem("authToken");
+   
     if (!token) {
       throw new Error("Token not found. Please log in again.");
     }
@@ -22,9 +23,9 @@ export const fetchProfile = () => async (dispatch) => {
     console.log("Token récupéré :", token);
 
     if (response.ok) {
-      // On extrait toutes les données du profil utilisateur
+    const username=data.body.userName
       const { email, firstName, lastName, userName, createdAt, updatedAt, id } = data.body;
-
+localStorage.setItem("UserName",username)
       // Envoie des données utilisateur au store Redux
       dispatch({
         type: "FETCH_PROFILE_SUCCESS",

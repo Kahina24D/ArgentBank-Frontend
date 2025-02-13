@@ -1,21 +1,58 @@
-// reducers/auth.reducer.js
+const savedAuthState = JSON.parse(localStorage.getItem("authState")) || {}; 
+const savedUserName = localStorage.getItem("UserName") || null; 
+
 const initialState = {
-  token: null,
+  token: savedAuthState.token || null,
+  isConnected: savedAuthState.isConnected || false,
+  user: savedAuthState.user || (savedUserName ? { userName: savedUserName } : null), 
   loading: false,
   error: null,
-  isConnected:false,
 };
 
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
     case "LOGIN_REQUEST":
-      return { ...state, loading: true, isConnected:true,error: null };
+      return { ...state, loading: true, error: null };
+    
     case "LOGIN_SUCCESS":
-      return { ...state, token: action.payload, isConnected:true,loading: false };
+      const updatedState = {
+        ...state,
+        isConnected: true,
+        user: { userName: action.payload.userName },
+        token: action.payload.token,
+        loading: false,
+      };
+
+      localStorage.setItem("authState", JSON.stringify(updatedState)); 
+      localStorage.setItem("UserName", action.payload.userName); 
+
+      return updatedState;
+
+    case "UPDATE_USERNAME":  // 🔥 Nouvelle action pour modifier le `userName`
+      const newState = {
+        ...state,
+        user: { userName: action.payload },
+      };
+
+      localStorage.setItem("authState", JSON.stringify(newState));
+      localStorage.setItem("UserName", action.payload);
+
+      return newState;
+
     case "LOGIN_FAIL":
-      return { ...state, loading: false, isConnected:true,error: action.payload };
+      return { ...state, loading: false, isConnected: false, error: action.payload };
+    
     case "LOGOUT":
-      return { ...state,isConnected:false, token: null };
+      localStorage.removeItem("authState");
+      localStorage.removeItem("UserName");
+      return {
+        token: null,
+        isConnected: false,
+        user: null,
+        loading: false,
+        error: null,
+      };
+
     default:
       return state;
   }

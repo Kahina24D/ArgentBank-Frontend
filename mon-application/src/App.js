@@ -1,14 +1,19 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Utilisez Router ici
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
+
 import { Home } from './Pages/Home/Home';
 import Login from './Pages/login/LogIn';
 import Profile from './Pages/Profile/Profile';
+
 import './App.css'
 function App() {
     // const isConnected = useSelector((state) => state.auth.isConnected);
 
+
+//  
     return (
         <Router> {/* Ajoutez Router ici */}
             <div>
